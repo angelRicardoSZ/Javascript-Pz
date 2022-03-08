@@ -28,13 +28,13 @@ class MySinglyLinkedList {
             value: value,
             next:null,
         }
-        this.tail = this.head;
-        this.length = 1;
+        this.tail = this.head; // Son el mismo objeto, lo que le sucede al head también al tail
+        this.length = 1;        
     }
     append(value){
-        const newnode = new Node(value);
-        this.tail.next = newnode; // Altera tanto al tail.next como al head.next
-        this.tail = newnode;      // cambia la dirección de memoria a la que esta apuntando this.tail
+        const newnode = new Node(value);   // Creamos un nodo nuevo
+        this.tail.next = newnode; // tanto al tail.next como al head.next apuntan a newnode, es decir cualquier cambio en newnode afecta a tail.next y head.next
+        this.tail = newnode;      // cambia la dirección de memoria a la que esta apuntando this.tail, ahora no apunta al head sino a newnode
         this.length++;
         return this;
     }
