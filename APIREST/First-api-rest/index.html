@@ -8,12 +8,42 @@
 </head>
 <body>
     <h1>
-        Gatos aleatorios
+        Gatos app
     </h1>
+    <span id="error"></span>
+    <section>
+        <h2>Gatos aleatorios</h2>
+    
 
-    <img alt="foto gatito aleatorio">
-    <script src="./main.js">
+        <article>
+            <img id="img1" width="150" alt="foto gatito aleatorio">
+            <button>Guardar gato en fav</button>    
+        </article>
 
-    </script>
+        
+        <article>
+            <img id="img2" width="150" alt="foto gatito aleatorio">
+            <button>Guardar gato en fav</button>    
+        </article>
+        
+        
+        <!--<button type="button"> Show me a cat!</button>-->
+        <!--
+            Second solution
+        -->
+        <button onclick="cat()">Recargar </button>
+
+        
+    </section>
+
+    <section id="favoritesMichis">
+        <h2>Gatos Fav</h2>
+        <article>
+            <img id="img1" width="150" alt="foto gatito aleatorio">
+            <button>Sacar de fav</button>    
+        </article>
+    </section>
+
+    <script src="./main.js"></script>
 </body>
 </html>
