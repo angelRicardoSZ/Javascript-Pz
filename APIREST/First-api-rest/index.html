@@ -17,13 +17,13 @@
 
         <article>
             <img id="img1" width="150" alt="foto gatito aleatorio">
-            <button>Guardar gato en fav</button>    
+            <button id="btn1">Guardar gato en fav</button>    
         </article>
 
         
         <article>
             <img id="img2" width="150" alt="foto gatito aleatorio">
-            <button>Guardar gato en fav</button>    
+            <button id="btn2">Guardar gato en fav</button>    
         </article>
         
         
@@ -44,6 +44,20 @@
         </article>
     </section>
 
+    <section id="uploadingGato">
+        <h2>Sube la foto</h2>
+
+        <form id="uploadingForm">
+            <input id="file" type="file" name="file">
+            <button type="button" onclick="uploadGato()">subir</button>
+        </form>
+
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
