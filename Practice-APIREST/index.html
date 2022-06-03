@@ -13,12 +13,12 @@
 <body>
     <header id="header" class="header-container">
         <span class="header-arrow inactive">&lt;</span>
-        <h1 class="header-title">PlatziMovies</h1>
+        <h1 class="header-title">App-Movies</h1>
         <h1 class="header-title header-title--categoryView inactive">Acción</h1>
     
         <form id="searchForm" class="header-searchForm">
             <input type="text" placeholder="Vengadores" />
-            <button>🔍</button>
+            <button id="searchBtn">🔍</button>
         </form>
     </header>
     
@@ -44,7 +44,7 @@
         <h2 class="categoriesPreview-title">Categorías</h2>
     
         <article class="categoriesPreview-list">
-            <div class="category-container">
+            <!-- <div class="category-container">
                 <h3 id="id28" class="category-title">Romance</h3>
             </div>
     
@@ -54,12 +54,12 @@
     
             <div class="category-container">
                 <h3 id="id14" class="category-title">Acción</h3>
-            </div>
+            </div> -->
         </article>
     </section>
     
     <section id="genericList" class="genericList-container inactive">
-        <div class="movie-container">
+        <!-- <div class="movie-container">
             <img
                 src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
                 class="movie-img"
@@ -81,7 +81,7 @@
                 class="movie-img"
                 alt="Nombre de la película"
             />
-        </div>
+        </div> -->
     </section>
     
     <section id="movieDetail" class="movieDetail-container inactive">
@@ -140,6 +140,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/secrets.js"></script>
     <script src="./src/main.js"></script>
+    <script src="./src/navigation.js"></script>
+    <script src="./src/nodes.js"></script>
+
     
 </body>
 </html>
