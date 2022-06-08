@@ -294,6 +294,158 @@ var someArticles = articles.map(function(article){
   array.pop()
   ```
 
+## Scope
+
+It is the scope that a variable will have within the code. In other words, the Scope will be responsible for deciding which blocks of code a variable will access.
+
+- **Lexical Scope:** The JavaScript interpreter works from the current execution scope and works until the variable in question is found. if the variable is not in any scope an exception is thrown
+
+```javascript
+var scope = "global";
+const functionScope = () => {
+	var scope = "local";	
+	const func = () => {
+		return scope
+	}
+	console.log(func());
+}
+functionScope();  // local
+console.log(scope); // global
+```
+
+- **function scope**: 
+
+  ```javascript
+  const fruits = () => {
+  	var fruit = "apple";
+  	console.log(fruit) 
+  } 
+  fruits() // apple
+  console.log(fruit) // fruit is not defined
+  ```
+
+  ```
+  const anotherFunction = () => {
+  	var x = 1;
+  	var x = 2;
+  	let y = 1;
+  	let y = 2;
+  	console.log(x);
+  	console.log(y);
+  }
+  anotherFunction(); // y has already been declared 
+  // variables with let or const can´t be reassigned
+  ```
+
+- **block scope**
+
+  ```javascript
+  // example 1
+  const fruits = () => {
+  	if (true) {
+  		var fruits1 = "apple"
+  		var fruits2 = "bannana"
+  		var fruits3 = "kiwi"
+  	}
+  	console.log(fruits1);
+  	console.log(fruits2);
+  	console.log(fruits3);
+  }
+  fruits() // apple, bannana, kiwi
+  
+  
+  const fruits = () => {
+  	if (true) {
+  		var fruits1 = "apple"
+  		let fruits2 = "bannana"
+  		const fruits3 = "kiwi"
+  	}
+  	console.log(fruits1);
+  	console.log(fruits2);
+  	console.log(fruits3);
+  }
+  fruits() // fruits2 is not defined, because let and const are declared within the block
+  
+  
+  // example 2
+  let x = 1; 
+  {
+      let x = 3
+      console.log(x); // 3
+  }
+  console.log(x); // 1
+  
+  
+  var x = 1; 
+  {
+      var x = 3
+      console.log(x); // 3
+  }
+  console.log(x); // 3
+  
+  // example 3
+  const anotherFunction = () => {
+      for(var i = 0; i < 10; i++) {
+          setTimeout(()=> {
+              console.log(i)
+          }, 1000)
+      }
+  } 
+  
+  anotherFunction() // 10, 10, 10, 10, 10, 10 ,10, 10, 10, 10
+  
+  const anotherFunction = () => {
+      for(let i = 0; i < 10; i++) {
+          setTimeout(()=> {
+              console.log(i)
+          }, 1000)
+      }
+  } 
+  
+  anotherFunction() // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+  ```
+
+- **Closure**
+
+  ```javascript
+  // example 1
+  const moneyBox = () => {
+  	var saveCoins = 0;
+  	const countCoins  = () => {
+  		saveCoins += coins
+  		console.log(`MoneyBox: ${saveCoins}`)
+  	}
+  	return countCoins;
+  } 
+  
+  let myMoneyBox = moneyBox();
+  
+  myMoneyBox(4);  // 4
+  myMoneyBox(6);  // 6
+  myMoneyBox(10);  // 10
+  
+  // example 2
+  const buildCount = (i) => {
+      let count = 1;
+      const displayCount = () => {
+          console.log(count++) // print the i value, then add 1
+      }
+      return displayCount;
+  }
+  const myCount = buildCount(1);
+  myCount(); // 1
+  myCount(); // 2
+  myCount(); // 3 
+  
+  const myOtherCount = buildCount(10);
+  myOtherCount() // 10
+  myOtherCount() // 11
+  myOtherCount() // 12
+  
+  ```
+
+  
+
 ## Callbacks
 
 A callback is a function passed as an argument to another function.
