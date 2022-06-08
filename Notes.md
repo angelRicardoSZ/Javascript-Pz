@@ -220,7 +220,79 @@ var someArticles = articles.map(function(article){
 })
 ```
 
+- Find: 
 
+  returns the value of the first element that passes a test.
+
+  executes a function for each array element.
+
+  returns `undefined` if no elements are found.
+
+  Does not execute the function for empty elements.
+
+  Does not change the original array.
+
+  ```javascript
+  array.find(condition)
+  ```
+
+- foreach: Executes the function one time for each element of the array
+
+  ```javascript
+  array.forEach()
+  ```
+
+- some: tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+  ```javascript
+  some((element, index, array) => { /* ... */ } )
+  some((element) => { /* ... */ } )
+  some(function(element, index, array){ /* ... */ })
+  ```
+
+  Example
+
+  ```javascript
+  function isBiggerThan10(element, index, array) {
+    return element > 10;
+  }
+  [2, 5, 8, 1, 4].some(isBiggerThan10);  // false
+  [12, 5, 8, 1, 4].some(isBiggerThan10); // true
+  ```
+
+- Push: 
+
+  Adds new items **to the end** of an array.
+
+  Changes the length of the array.
+
+  returns the new length.
+
+  ```javascript
+  array.push()
+  ```
+
+- shift:
+
+  Removes **the first item** of an array.
+
+  Changes the original array.
+
+  Returns the shifted element
+
+  ```javascript
+  array.shift()
+  ```
+
+  pop: removes (pops) **the last element** of an array.
+
+  changes the original array.
+
+   returns the removed element.
+
+  ```javascript
+  array.pop()
+  ```
 
 ## Callbacks
 
@@ -285,5 +357,4 @@ async function main() {
 }
 main()
 ```
-
 
