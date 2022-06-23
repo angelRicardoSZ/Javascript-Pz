@@ -1,3 +1,4 @@
+export {};
 type SquareSize = "100x100" | "500x500"
 
 
@@ -39,13 +40,13 @@ function handleError(code: number, message:string): never | string {
 }
 
 
-try{
-    let result = handleError(200,"ok")
-    console.log("result",result)  // string
+// try{
+//     let result = handleError(200,"ok")
+//     console.log("result",result)  // string
 
-    result = handleError(400,"error") // never
-    console.log("result",result)
-} catch (e) {
-    console.error(e)
+//     result = handleError(400,"error") // never
+//     console.log("result",result)
+// } catch (e) {
+//     console.error(e)
 
-}
+// }
