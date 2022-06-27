@@ -75,5 +75,5 @@ user = {id: 10, username: "angel", isPro:true}
 console.log("user", user);
 user.username = "paparatzi"
 console.log("user edit", user)
-user.id = 150; // error
+// user.id = 150; // error
 console.log("id edited", user)
