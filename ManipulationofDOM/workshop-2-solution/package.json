@@ -1,0 +1,26 @@
+{
+  "name": "platzi-dom",
+  "version": "0.1.0",
+  "description": "Curso de Manipulacion del DOM",
+  "author": "@jonalvarezz",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "workshop-fetch",
+    "workshop-lazy-loading"
+  ],
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "prettier --check \"src/**/*.js\"",
+    "test": "yarn lint"
+  },
+  "devDependencies": {
+    "husky": "7",
+    "prettier": "2",
+    "pretty-quick": "3",
+    "snowpack": "3",
+    "tailwindcss": "2"
+  }
+}
